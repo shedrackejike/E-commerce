@@ -4,27 +4,31 @@ import ProductCard from "../Components/Route/ProductCard/ProductCard";
 import styles from "../styles/Styles";
 import { useSearchParams } from "react-router-dom";
 import { productData } from "../static/data";
+import { useSelector } from "react-redux";
 
 const ProductPage = () => {
-  const [searchParams] = useSearchParams();
-  const categoryData = searchParams.get("category");
-  const [data, setData] = useState([]);
+  // const [searchParams] = useSearchParams();
+  // const categoryData = searchParams.get("category");
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    if (categoryData === null) {
-      const d = productData && productData.sort((a, b) => a.total_sell);
-      setData(d);
-    } else {
-      const d =
-        productData && productData.filter((i) => i.category === categoryData);
-      setData(d);
-    }
-    // window.scrollTo(0,0)
-  }, []);
+  // useEffect(() => {
+  //   if (categoryData === null) {
+  //     const d = productData && productData.sort((a, b) => a.total_sell);
+  //     setData(d);
+  //   } else {
+  //     const d =
+  //       productData && productData.filter((i) => i.category === categoryData);
+  //     setData(d);
+  //   }
+  //   // window.scrollTo(0,0)
+  // }, []);
+
+ const { products } = useSelector(state => state.product)
+ console.log(products);
 
   return (
     <div>
-      <Header activeHeading={3} />
+      {/* <Header activeHeading={3} />
       <br />
       <br />
       <div className={`${styles.section}`}>
@@ -37,7 +41,7 @@ const ProductPage = () => {
             no products found!
           </h1>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 };

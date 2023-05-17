@@ -9,14 +9,13 @@ const SuggestedProduct = ({ data }) => {
   const [productData,setProductData] = useState();
 
   useEffect(() => {
-    const d =
-    allProducts && allProducts.filter((i) => i.category === data.category);
+    const d = allProducts && allProducts.filter((i) => i.category === data.category);
     setProductData(d);
   }, []);
 
   return (
     <div>
-      {data ? (
+      {/* {data ? (
         <div className={`p-4 ${styles.section}`}>
           <h2
             className={`${styles.heading} text-[25px] font-[500] border-b mb-5`}
@@ -31,7 +30,8 @@ const SuggestedProduct = ({ data }) => {
              }
       </div>
         </div>
-      ) : null}
+      ) : null} */}
+      <h1>suggested products</h1>
     </div>
   );
 };

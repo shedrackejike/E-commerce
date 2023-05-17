@@ -10,7 +10,7 @@ const ProductDetailsPage = () => {
 
     const {name} = useParams();
     const [data,setData] = useState(null)
-    const productName = name.replace(/-/g," ");
+    const productName = name.replace(/_/g," ");
     
 useEffect(() => {
     const data = productData.find((i  ) => i.name === productName);
@@ -28,7 +28,7 @@ useEffect(() => {
             </>
           // )
         }
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

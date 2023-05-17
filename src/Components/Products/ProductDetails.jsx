@@ -30,7 +30,7 @@ const ProductDetails = ({ data }) => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-red">
       {data ? (
         <div className={`${styles.section} w-[90%] 800px:w-[80%]  h-screen`}>
           <div className="w-full py-5">
@@ -124,11 +124,11 @@ const ProductDetails = ({ data }) => {
                   </span>
                 </div>
                 <div className="flex items-center pt-8">
-                  <img
+                  {/* <img
                     src={data.shop_avatar.url}
                     alt=""
                     className="w-[50px] h-[50px] rounded-full mr-2"
-                  />
+                  /> */}
                   <div className="pr-8">
                     <h3 className={`${styles.shop_name} pb-1 pt-1`}>
                       {data.shop.name}
@@ -164,7 +164,7 @@ const ProductDetailsInfo = ({ data }) => {
   const [active, setActive] = useState(1);
 
   return (
-    <div className="bg-[#f5f6fb] px-3 800px:px-10 py-2 rounded ">
+    <div className="bg-red-900 px-3 800px:px-10 py-2 rounded ">
       <div className="w-full flex justify-between border-b pt-10 pb-2">
         <div className="relative">
           <h5
