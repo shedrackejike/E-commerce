@@ -7,7 +7,13 @@ export const loadUser = () => async(dispatch) => {
         dispatch({
             type: "LoadUserRequest",
         });
-        const {data} = await axios.get(`${server}/user/getUser`, {withCredentials:true});
+        const local = localStorage.getItem("token")
+        const config = {
+            headers: {
+                token: local
+            }
+        }
+        const {data} = await axios.get(`${server}/user/getUser`,config);
         dispatch({
             type: "LoadUserSuccess",
             payload: data.user,

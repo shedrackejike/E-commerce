@@ -23,11 +23,11 @@ import { loadUser } from "./Redux/Actions/user";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { loading } = useSelector((state) => state.user);
+  // const { loading } = useSelector((state) => state.user);
 
-  useEffect(() => {
-    Store.dispatch(loadUser());
-  }, []);
+  // useEffect(() => {
+  //   Store.dispatch(loadUser());
+  // }, []);
   return (
     <>
       {/* {loading ? null : ( */}

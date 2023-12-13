@@ -39,12 +39,13 @@ const LogData = () => {
     
     console.log(state);
     axios.post(`${server}/user/login-user`, state, config,{withCredentials: true}).then((res) =>{
-      // console.log(res.data);
+      console.log(res.data);
       let ttt = res.data;
-      toast.success(ttt,{position:"bottom-left",theme:"colored"})
-      navigate("/ ")
-      window.location.reload(true);
-      // console.log(res);
+      toast.success(ttt.message,{position:"bottom-left",theme:"colored"})
+      localStorage.setItem("token",ttt.token)
+      navigate("/")
+      // window.location.reload(true);
+      console.log(ttt);
     }).catch((err) =>{
       console.log(err.response.data);
       let fff = err.response.data;

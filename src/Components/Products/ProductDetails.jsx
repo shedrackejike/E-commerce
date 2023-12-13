@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "../../styles/Styles";
 import { Link } from "react-router-dom";
 import {
@@ -14,6 +14,13 @@ const ProductDetails = ({ data }) => {
   const [click, setClick] = useState(false);
   const [select, setSelect] = useState(0);
   const navigate = useNavigate();
+
+  const id = useParams().name
+  console.log(id)
+
+  useEffect(() => {
+    
+  }, [])
 
   const incrementCount = () => {
     setCount(count + 1);

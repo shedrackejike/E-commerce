@@ -20,7 +20,7 @@ import Wishlist from "../Wishlist/Wishlist"
 
 
 const Header = ({ activeHeading }) => {
-  const { isAuthenticated, user } = useSelector((state) => state.user);
+  // const { isAuthenticated, user } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
@@ -178,7 +178,7 @@ const Header = ({ activeHeading }) => {
                     />
                   </Link>
                 ) : (
-                  <Link to={"/login"}>
+                  <Link to={"/profile"}>
                     <CgProfile size={30} color="rgb(255 2555 255 / 83%)" />
                   </Link>
                 )}
